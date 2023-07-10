@@ -20,17 +20,6 @@ public class Enemy : MonoBehaviour
 
     WaitForFixedUpdate wait;
 
-    private void OnEnable()
-    {
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-        isLive = true;
-        coll.enabled = true;
-        rigid.simulated = true; // 리지드바디 물리적 비활성화는 .simulated = false;
-        sprite.sortingOrder = 2;
-        animator.SetBool("Dead", false);
-        health = maxHealth;
-    }
-
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -64,6 +53,17 @@ public class Enemy : MonoBehaviour
         // 몬스터도 움직일 때, 플레이어 방향보도록 바꾸기
         sprite.flipX = target.position.x < rigid.position.x;
         // filpX가 true면 왼쪽
+    }
+
+    private void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        isLive = true;
+        coll.enabled = true;
+        rigid.simulated = true; // 리지드바디 물리적 비활성화는 .simulated = false;
+        sprite.sortingOrder = 2;
+        animator.SetBool("Dead", false);
+        health = maxHealth;
     }
 
     // 초기 속성 적용 함수
