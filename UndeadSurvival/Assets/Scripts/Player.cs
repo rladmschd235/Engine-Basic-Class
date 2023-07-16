@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public Vector2 inputVec;
     public float speed; 
     public Scanner scanner;
+    public Hand[] hands;
    
     SpriteRenderer spriter;
     Rigidbody2D rigid;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
+        hands = GetComponentsInChildren<Hand>(true); // true를 넣으면 비활성화된 오브젝트의 컴포넌트 가져오기 가능
     }
 
     private void Update() // 프레임 실행 주기

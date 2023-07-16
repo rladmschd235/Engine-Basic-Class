@@ -11,6 +11,7 @@ public class ItemData : ScriptableObject
     public ItemType itemType; // 아이템 종류
     public int itemId; // 아이템 아이디
     public string itemName; // 아이템 이름
+    [TextArea]
     public string itemDesc; // 아이템 설명
     public Sprite itemIcon; // 아이템 아이콘
 
@@ -22,4 +23,5 @@ public class ItemData : ScriptableObject
 
     [Header("# Weapon")]
     public GameObject projectile; // 프리팹
+    public Sprite hand;
 }

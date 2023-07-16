@@ -78,6 +78,11 @@ public class Weapon : MonoBehaviour
                 speed = 0.5f;
                 break;
         }
+
+        // Hand Set
+        Hand hand = player.hands[(int)data.itemType];
+        hand.spriter.sprite = data.hand;
+        hand.gameObject.SetActive(true);  
     }
 
     private void Batch()
