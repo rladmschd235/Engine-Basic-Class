@@ -25,6 +25,11 @@ public class Player : MonoBehaviour
 
     private void Update() // 프레임 실행 주기
     {
+        if(!GameManager.instance.isLive)
+        {
+            return;
+        }
+        
         // 키보드 입력 받기
         inputVec.x = Input.GetAxisRaw("Horizontal"); // GetAxisRaw: -1, 0, 1 
         inputVec.y = Input.GetAxisRaw("Vertical");
@@ -35,6 +40,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate() // 물리적 실행 주기
     {
+        if (!GameManager.instance.isLive)
+        {
+            return;
+        }
+
         // 움직일 벡터
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
 
@@ -44,6 +54,11 @@ public class Player : MonoBehaviour
 
     private void LateUpdate() // 프레임이 종료되기 전에 실행
     {
+        if (!GameManager.instance.isLive)
+        {
+            return;
+        }
+
         anim.SetFloat("Speed", inputVec.magnitude); // magnitude: 벡터의 크기(길이)
 
         if (inputVec.x != 0)
