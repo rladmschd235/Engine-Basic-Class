@@ -52,6 +52,19 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    public void LevelUp(float damage, int count)
+    {
+        this.damage = damage * Character.Damage;
+        this.count += count;
+
+        if (id == 0)
+        {
+            Batch();
+        }
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
+    }
+
     public void Init(ItemData data)
     {
         // Basic Set
@@ -61,8 +74,8 @@ public class Weapon : MonoBehaviour
 
         // Property set
         id = data.itemId;
-        damage = data.baseDamage;
-        count = data.baseCount;
+        damage = data.baseDamage * Character.Damage;
+        count = data.baseCount + Character.Count;
 
         for(int i = 0; i < GameManager.instance.poolManager.prefabs.Length; i++)
         {
@@ -76,13 +89,15 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0: // up, rigth
-                speed = -150;
+                speed = 150 * Character.weaponSpeed;
                 Batch(); // 배치
                 break;
             default:
-                speed = 0.5f;
+                speed = 0.5f * Character.weaponRate;
                 break;
         }
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
 
         // Hand Set
         Hand hand = player.hands[(int)data.itemType];
@@ -114,17 +129,6 @@ public class Weapon : MonoBehaviour
             bulltet.Translate(bulltet.up * 1.5f, Space.World);
 
             bulltet.GetComponent<Bullet>().Init(damage, -1, Vector2.zero); // 주석: -1은 관통력 무한 
-        }
-    }
-
-    public void LevelUp(float damage, int count)
-    {
-        this.damage = damage;
-        this.count += count;
-
-        if (id == 0)
-        {
-            Batch();
         }
     }
 
