@@ -10900,6 +10900,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: b8610d2a1f4e4b343ade8ffc57effe48, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &701985922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11141,6 +11142,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 99bf0126067e2054c96355ccc31a0807, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &779391354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15740,6 +15742,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: c0d752bd8b53b364396f9cb933d00912, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &952224250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16271,6 +16274,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 6a6f82b5a66192248872d6c7195cd46a, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &1081735242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17369,6 +17373,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: a605bf6e69ed05c4e89b1ad7fd6fbbe3, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &1480042732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23880,7 +23885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB3D9\uC18D\uB3C4 10% \uC99D\uAC00"
+  m_Text: "\uC5F0\uC0AC\uC18D\uB3C4 10% \uC99D\uAC00"
 --- !u!222 &2045809656
 CanvasRenderer:
   m_ObjectHideFlags: 0
