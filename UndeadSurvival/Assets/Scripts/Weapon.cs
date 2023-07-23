@@ -128,7 +128,7 @@ public class Weapon : MonoBehaviour
             bulltet.Rotate(rotVec);
             bulltet.Translate(bulltet.up * 1.5f, Space.World);
 
-            bulltet.GetComponent<Bullet>().Init(damage, -1, Vector2.zero); // 주석: -1은 관통력 무한 
+            bulltet.GetComponent<Bullet>().Init(damage, -100, Vector2.zero); // 주석: -100은 관통력 무한 
         }
     }
 

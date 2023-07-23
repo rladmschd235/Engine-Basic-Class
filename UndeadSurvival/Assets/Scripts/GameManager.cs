@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
 
     [Header("# Game Control")]
     public bool isLive;
-    public Player player;
-    public PoolManager poolManager;
+    public float gameTime; // 실제 흐르는 시간
+    public float maxGameTime = 3 * 10f; // 최대 게임 시간
 
     [Header("# Player Info")]
     public int playerId;
@@ -22,11 +22,11 @@ public class GameManager : MonoBehaviour
     public int[] nextExp = { 3, 5, 10, 100, 150, 210, 280, 360, 450, 600 }; //10, 30, 60
 
     [Header("# Game Object")]
-    public float gameTime; // 실제 흐르는 시간
-    public float maxGameTime = 3 * 10f; // 최대 게임 시간
+    public PoolManager poolManager;
+    public Player player;
     public LevelUp uiLevelUp;
     public Result uiResult;
-    public GameObject enemyCleaner; 
+    public GameObject enemyCleaner;
 
     private void Awake()
     {
