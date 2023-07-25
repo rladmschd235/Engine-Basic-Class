@@ -6,7 +6,6 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     // 무기를 배치
-
     public int id; // 무기 id
     public int prefabId;
     public float damage;
