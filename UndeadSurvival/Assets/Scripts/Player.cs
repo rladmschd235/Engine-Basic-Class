@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -36,10 +37,6 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        
-        // 키보드 입력 받기
-        inputVec.x = Input.GetAxisRaw("Horizontal"); // GetAxisRaw: -1, 0, 1 
-        inputVec.y = Input.GetAxisRaw("Vertical");
     }
 
     // 1. 힘 addForce
@@ -53,10 +50,15 @@ public class Player : MonoBehaviour
         }
 
         // 움직일 벡터
-        Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
+        Vector2 nextVec = inputVec * speed * Time.fixedDeltaTime;
 
         // 3. 위치 이동 movePosition
         rigid.MovePosition(rigid.position + nextVec);
+    }
+
+    private void OnMove(InputValue value)
+    {
+        inputVec = value.Get<Vector2>();
     }
 
     private void LateUpdate() // 프레임이 종료되기 전에 실행
